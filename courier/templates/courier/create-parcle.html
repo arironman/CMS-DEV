@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block head %}
+
+<link rel="stylesheet" href="/static/CSS/general/neon.css">
+<link rel="stylesheet" href="/static/CSS/general/contact.css">
+<link rel="stylesheet" href="/static/CSS/user/create-parcle.css">
+<style>
+    .address-button-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+    }
+    .address-button-container button{
+           padding: 5px;
+           width: 100%;
+           text-align: center;
+           max-width: 255px;
+           margin-top: 1rem;
+    }
+</style>
+
+{% endblock %}
+
+
+{% block content %}
+    <div class="form-container my-3">
+    
+        <form class="contact-form" method="post" action="/courier/">
+            {% csrf_token %}
+    
+            <h2>Create Parcle</h2>
+    
+            <div class="input-box">
+                <input type="text" name="recipient-name" id='recipient-name' required>
+                <span>Recipient Name</span>
+            </div>
+            <div class="input-box">
+                <input type="email" name="recipient-email" id='recipent-email' required>
+                <span>Recipient Email</span>
+            </div>
+            <div class="input-box">
+                <input type="text" name="parcle-title" id='parcle-name' required>
+                <span>Parcle Name</span>
+            </div>
+    
+            <div class="input-box">
+                <input type="number" name="weight" id='parcle-weight' required>
+                <span>Parcle Weight(in grams)</span>
+            </div>
+    
+            <div class="input-box">
+                <textarea name="desc" id='parcle-desc' required></textarea>
+                <span>Description(optional)</span>
+            </div>
+    
+            <div class="address-button-container">
+                <button type="button" id="add-pickup-add-btn" class="my-btn">
+                    Add Pick Up Address
+                </button>
+                <button type="button" id="add-recipient-add-btn" class="my-btn">
+                    Add Delivery Address
+                </button>
+            </div>
+    {% include 'courier/components/delivery-address-modal.html' %}
+    {% include 'courier/components/pickup-address-modal.html' %}
+
+            <div>
+                <button class="submit-button neon" type="submit">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                        SUBMIT
+                </button>
+            </div>
+        </form>
+    
+    </div>
+
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="/static/CSS/general/contact.css">
+<link rel="stylesheet" href="/static/CSS/general/neon.css">
+<style>
+    .status {
+        position: relative;
+        color: tomato;
+        bottom: 2.5rem;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="content-container py-4">
+    <div class="form-container my-3">
+
+        <form class="contact-form" method="post" action="{% url 'contact' %}?next={{request.path}} ">
+            {% csrf_token %}
+
+            <h2>Contact Us</h2>
+
+            <div class="input-box">
+                <input type="text" name="name" id='contact-name'
+                    onkeypress='return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32))'
+                    required>
+                <span>Full Name</span>
+            </div>
+
+            <div class="input-box">
+                <input type="email" name="email" id='contact-email' required>
+                <span>Email</span>
+            </div>
+            <small class="status" id='email-status'></small>
+
+            <div class="input-box">
+                <textarea name="desc" id='contact-desc' required></textarea>
+                <span>Desc</span>
+            </div>
+
+            <div>
+                <button class="submit-button" type="submit">
+                    <a class="neon" type="submit" style="color: dodgerblue; cursor: pointer;">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        SUBMIT
+                    </a>
+                </button>
+            </div>
+        </form>
+
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+
+<script>
+    $('#contact-email').on('input', function () {
+        var input = $(this);
+        if ($('#contact-email').is(':invalid')) {
+            input.removeClass("valid").addClass("invalid");
+            $('#email-status').text('invalid')
+        }
+        else {
+            input.removeClass("invalid").addClass("valid");
+            $('#email-status').text('')
+
+        }
+    });
+
+    $('#contact-name').on('input', function () {
+        var input = $(this);
+        if ($('#contact-name').is(':invalid')) { input.removeClass("valid").addClass("invalid"); }
+        else {
+            input.removeClass("invalid").addClass("valid");
+        }
+    });
+    $('#contact-desc').on('input', function () {
+        var input = $(this);
+        if ($('#contact-desc').is(':invalid')) { input.removeClass("valid").addClass("invalid"); }
+        else {
+            input.removeClass("invalid").addClass("valid");
+        }
+    });
+
+</script>
+{% endblock %}

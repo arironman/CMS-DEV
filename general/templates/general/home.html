@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="/static/CSS/general/home.css">
+{% endblock %}
+
+{% block content %}
+
+<div class="track-container">
+    <div class="tracking-form-container">
+
+        <div class="tracking-form mx-3">
+
+            <div class="tracking-input-container">
+                <input type="text" name="name" onkeyup="trackHome()"  id="home-track-id" required>
+                <span>Enter Tracking ID</span>
+            </div>
+            <!-- <input type="submit" value="Track Courier"> -->
+            <a type='button' href="/courier/" class="tracking-courier-home-btn" id="trackHomeBtn">Track Courier</a>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    // js for home tracking
+    var trackHomeBtn = document.getElementById('trackHomeBtn');
+    function trackHome(){
+        var value = $('#home-track-id').val();
+        console.log(value);
+        trackHomeBtn.href = `/courier/${value}/`
+    }
+
+</script>
+
+
+<div class="card-container">
+    <div class="card home-card" title="Services">
+        <div class="card-body d-flex flex-row home-card-body">
+            <div style="margin: auto;">
+                <h4 class="card-title font-weight-bold mb-2">
+                    Services
+                </h4>
+            </div>
+        </div>
+        <hr class="home-card-hr">
+
+        <!-- Card image -->
+        <div class="view overlay">
+            <img class="home-card-img " src="/static/images/services.png" alt="Services" title="Services">
+        </div>
+
+        <hr class="home-card-hr">
+
+        <!-- Card content -->
+        <div class="card-body mt-0 pt-0">
+            <div class="collapse-content">
+                <div class="card-text collapse" id="home-service-text-1">
+                    Delhivery’s aim is to build the operating system for commerce in India. We provide parcel
+                    transportation, warehousing, freight, reverse logistics, cross-border and technology services
+                </div>
+
+                <a class="btn btn-secondary collapsed text-capitalize card-button-view " data-toggle="collapse"
+                    href="#home-service-text-1" id="home-service-viewmore-1" aria-expanded="false"
+                    aria-controls="home-service-text-1">
+                    view more <span class="fas fa-chevron-down"></span></a>
+
+            </div>
+
+            <a type="button" href="#" class="btn btn-primary mt-1"> Go to About Page</a>
+        </div>
+    </div>
+
+    <div class="card home-card" title="Services">
+        <div class="card-body d-flex flex-row home-card-body">
+            <div style="margin: auto;">
+                <h4 class="card-title font-weight-bold mb-2">
+                    Services
+                </h4>
+            </div>
+        </div>
+        <hr class="home-card-hr">
+
+        <!-- Card image -->
+        <div class="view overlay">
+            <img class="home-card-img " src="/static/images/services.png" alt="Services" title="Services">
+        </div>
+
+        <hr class="home-card-hr">
+
+        <!-- Card content -->
+        <div class="card-body mt-0 pt-0">
+            <div class="collapse-content">
+                <div class="card-text collapse" id="home-service-text-2">
+                    Delhivery’s aim is to build the operating system for commerce in India. We provide parcel
+                    transportation, warehousing, freight, reverse logistics, cross-border and technology services
+                </div>
+
+                <a class="btn btn-secondary collapsed text-capitalize card-button-view " data-toggle="collapse"
+                    href="#home-service-text-2" id="home-service-viewmore-2" aria-expanded="false"
+                    aria-controls="home-service-text-2">
+                    view more <span class="fas fa-chevron-down"></span></a>
+
+            </div>
+
+            <a type="button" href="#" class="btn btn-primary mt-1"> Go to About Page</a>
+        </div>
+    </div>
+
+    <div class="card home-card" title="Services">
+        <div class="card-body d-flex flex-row home-card-body">
+            <div style="margin: auto;">
+                <h4 class="card-title font-weight-bold mb-2">
+                    Services
+                </h4>
+            </div>
+        </div>
+        <hr class="home-card-hr">
+
+        <!-- Card image -->
+        <div class="view overlay">
+            <img class="home-card-img " src="/static/images/services.png" alt="Services" title="Services">
+        </div>
+
+        <hr class="home-card-hr">
+
+        <!-- Card content -->
+        <div class="card-body mt-0 pt-0">
+            <div class="collapse-content">
+                <div class="card-text collapse" id="home-service-text-3">
+                    Delhivery’s aim is to build the operating system for commerce in India. We provide parcel
+                    transportation, warehousing, freight, reverse logistics, cross-border and technology services
+                </div>
+
+                <a class="btn btn-secondary collapsed text-capitalize card-button-view " data-toggle="collapse"
+                    href="#home-service-text-3" id="home-service-viewmore-3" aria-expanded="false"
+                    aria-controls="home-service-text-3">
+                    view more <span class="fas fa-chevron-down"></span></a>
+
+            </div>
+
+            <a type="button" href="#" class="btn btn-primary mt-1"> Go to About Page</a>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+{% endblock %}
+
+{% block js %}
+{% endblock %}

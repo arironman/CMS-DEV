@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'CSS/language.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="card-container" id='language-container'>
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script>
+        var language = '{{language}}';
+        var image = '{{image}}';
+        var category_text = {
+                'blog': '{{blog}}',
+                'program': '{{program}}',
+                'project': '{{project}}',
+                'query': '{{query}}'
+            };
+    </script>
+    <script src="/static/JS/language.js"></script>
+{% endblock %}

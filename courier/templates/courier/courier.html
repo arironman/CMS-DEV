@@ -1,0 +1,189 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block head %}
+
+<link rel="stylesheet" href="/static/CSS/general/neon.css">
+<link rel="stylesheet" href="/static/CSS/courier/courier-conform.css">
+
+<style>
+    .courier-details-container {
+        border: 2px solid dodgerblue;
+        max-width: 700px;
+        margin: 3rem auto;
+        color: mintcream;
+        padding: 1rem;
+        border-radius: 10px;
+    }
+
+    .page-title {
+        border-bottom: 1.2px solid mintcream;
+        width: 95%;
+        margin: 1rem auto;
+        color: dodgerblue;
+    }
+
+    .detail-container {
+        display: flex;
+        /* justify-content: space-between; */
+        margin: 10px auto;
+        width: 95%;
+        flex-wrap: wrap;
+    }
+
+    .detail-key,
+    .detail-value {
+        max-width: 50%;
+        width: 50%;
+        text-align: left;
+    }
+
+    .detail-key {
+        width: 40%;
+        margin-left: 1rem;
+    }
+
+    .detail-container details {
+        margin: 1rem 0;
+    }
+
+    .inner-detail-container {
+        border: 2px solid mintcream;
+        border-radius: 10px;
+        max-width: 500px;
+        margin: 1rem auto;
+    }
+
+    .detail-container .my-btn {
+        margin-top: 1rem;
+        padding: 5px 10px;
+    }
+</style>
+
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="courier-details-container">
+    <h3 class="page-title">Courier Details</h3>
+
+    <div class="detail-container">
+        <div class="detail-key">Courier Title</div>
+        <div class="detail-value">{{courier.title}}</div>
+    </div>
+
+    <div class="detail-container">
+        <div class="detail-key">Courier Tracking Id</div>
+        <div class="detail-value">{{courier.id}}</div>
+    </div>
+
+
+    <div class="detail-container">
+        <div class="detail-key">Status</div>
+        <div class="detail-value">
+            {% if status.is_delivered %}
+            Delivered
+            {% elif status.out_for_delivery %}
+            Out For Delivery
+            {% elif status.is_shipped %}
+            Shipped
+            {% elif status.is_picked %}
+            On the Way
+            {% else %}
+            Pick Up Soon
+            {% endif %}
+
+        </div>
+    </div>
+    <div class="detail-container">
+        <div class="detail-key">Description</div>
+        <div class="detail-value">{{courier.description}}</div>
+    </div>
+    <div class="detail-container">
+        <div class="detail-key">Weight</div>
+        <div class="detail-value">{{courier.weight}}</div>
+    </div>
+
+    <div class="detail-container">
+        <div class="detail-key">Delivery Charge</div>
+        <div class="detail-value">{{courier.charge}}</div>
+    </div>
+
+    <div class="detail-container">
+        <div class="detail-key">Pick Up Date</div>
+        <div class="detail-value">{{courier.pickup_date}}</div>
+    </div>
+
+
+    <div class="detail-container">
+        <div class="detail-key">Delivery Date</div>
+        <div class="detail-value">{{status.delivered_date}}</div>
+    </div>
+
+
+    <div class="detail-container" style="display: block;text-align: left;">
+
+        <details>
+            <summary>Recipient Details</summary>
+            <div class="inner-detail-container">
+
+                <div class="detail-container">
+                    <div class="detail-key">Recipient Name</div>
+                    <div class="detail-value">{{courier.recipient_name}}</div>
+                </div>
+                <div class="detail-container">
+                    <div class="detail-key">Recipient Email</div>
+                    <div class="detail-value">{{courier.recipient_email}}</div>
+                </div>
+                <div class="detail-container">
+                    <div class="detail-key">Recipient Address</div>
+                    <div class="detail-value">
+                        <pre style="color: mintcream;">
+{{deliver.house_number}},
+{{deliver.street}},
+{{deliver.city}},
+{{deliver.district}},
+{{deliver.state}} - {{deliver.pincode}}
+
+</pre>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <details>
+            <summary>Sender Details</summary>
+            <div class="inner-detail-container">
+
+                <div class="detail-container">
+                    <div class="detail-key">Sender Name</div>
+                    <div class="detail-value">{{courier.customer}}</div>
+                </div>
+                <div class="detail-container">
+                    <div class="detail-key">Sender Email</div>
+                    <div class="detail-value">{{courier.customer.email}}</div>
+                </div>
+                <div class="detail-container">
+                    <div class="detail-key">Sender Address</div>
+                    <div class="detail-value">
+                        <pre style="color: mintcream;">
+{{pickup.house_number}},
+{{pickup.street}},
+{{pickup.city}},
+{{pickup.district}},
+{{pickup.state}} - {{pickup.pincode}}
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </details>
+    </div>
+
+
+
+</div>
+
+{% endblock %}

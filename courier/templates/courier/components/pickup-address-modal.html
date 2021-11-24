@@ -1,0 +1,61 @@
+<!-- RECEPIENT ADDRESS MODAL -->
+<div class="modal" id='pickup-address-modal' tabindex="-1" role="dialog" style='top:5vh;'>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header border-top-0">
+                <h5 class="modal-title font-weight-bold">ADD PICK UP ADDRESS</h5>
+                <button type="button" class="close close-pick-add" data-dismiss="modal" aria-label="Close">
+
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <!-- <form method="POST" action="" id='login-modal-form'> -->
+            <div class="modal-body">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="House Number" name='pickup-house-no'>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Street" name='pickup-street'>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="City" name="pickup-city">
+                </div>
+                <div class="form-group">
+                    <select name="pickup-state" class="form-control" aria-placeholder="State" id="pickup-state"
+                        onchange="addDistrict(this, 'pickup')">
+                        {% include 'courier/components/state.html' %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select name="pickup-district" class="form-control" aria-placeholder="District" id='pickup-district'
+                        onchange="addPincode(this, 'pickup')">
+                        <option value="">District</option>
+                    </select>
+                
+                </div>
+                <div class="form-group">
+                    <select name="pickup-pincode" class="form-control" aria-placeholder="Pincode" id="pickup-pincode">
+                        <option value="">Pincode</option>
+                    </select>
+                
+                </div>            </div>
+            <div class="modal-footer border-bottom-0">
+                <!-- <button type="submit" class="btn btn-primary"> Submit</button> -->
+                <button type="button" class="btn btn-secondary close-pick-add" data-dismiss="modal">Close</button>
+            </div>
+            <!-- </form> -->
+        </div>
+    </div>
+</div>
+
+<script>
+    $('#add-pickup-add-btn').on('click', function () {
+        $('#pickup-address-modal').show();
+    });
+
+    $('.close-pick-add').on('click', function () {
+        $('#pickup-address-modal').hide();
+    });
+
+
+</script>

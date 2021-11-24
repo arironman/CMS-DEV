@@ -1,0 +1,179 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="/static/CSS/general/contact.css">
+<link rel="stylesheet" href="/static/CSS/form.css">
+<link rel="stylesheet" href="/static/CSS/general/neon.css">
+
+<style>
+    .status {
+        position: relative;
+        color: tomato;
+        bottom: 2.5rem;
+    }
+
+    #signup-gender {
+        background-color: #122647;
+        color: rgba(255, 255, 255, 0.5);
+        border: none;
+        margin-left: auto;
+        margin-right: 1rem;
+        outline: none;
+        display: flex;
+        width: 40%;
+        max-width: 150px;
+    }
+
+    .select-container {
+        border-bottom: 2px solid rgba(255, 2555, 255, 0.5);
+        justify-content: space-between;
+        margin: auto;
+    }
+
+    #username-checker {
+        display: flex;
+        justify-content: right;
+        margin-left: auto;
+        position: relative;
+    }
+
+    .select-active {
+        bottom: 1.5rem !important;
+        color: dodgerblue !important;
+        font-weight: bold !important;
+    }
+</style>
+
+
+<style>
+    .address-button-container {
+        /* display: flex; */
+        flex-wrap: wrap;
+        /* justify-content: space-between; */
+        margin-bottom: 2rem;
+    }
+
+    .address-button-container button {
+        padding: 5px;
+        width: 100%;
+        text-align: center;
+        max-width: 255px;
+        margin-top: 1rem;
+        border-color: rgba(255, 255, 255, 0.5);
+        color: rgba(255, 255, 255, 0.5);
+        background: #122647;
+    }
+</style>
+
+{% endblock %}
+
+{% block content %}
+<div class="content-container py-4">
+    <div class="form-container my-3">
+
+        <form class="contact-form" method="post" action="/signup/">
+            {% csrf_token %}
+
+            <h2>Create Account</h2>
+
+            <div class="input-box">
+                <input type="text" name="name" id='signup-name'
+                    onkeypress='return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32))'
+                    required>
+                <span>Full Name</span>
+            </div>
+
+            <div class="input-box">
+                <input type="email" name="email" id='signup-email' required>
+                <span>Email</span>
+            </div>
+            <small class="status" id='email-status'></small>
+
+            <div class="input-box">
+                <input type="text" name="username" id='username-input' required>
+                <span>Choose Username</span>
+                <span class="fas" id="username-checker"></span>
+            </div>
+
+            <div class="input-box">
+                <input type="tel" name="mobile" id='signup-mobile' required>
+                <span>Phone Number</span>
+            </div>
+
+            <div class="input-box select-container">
+                <span id="gender-label">Gender</span>
+                <select name="gender" id="signup-gender">
+                    <option value="male">male</option>
+                    <option value="female">female</option>
+                    <option value="other">other</option>
+                </select>
+            </div>
+
+
+            <div class="input-box" style="display: flex; justify-content: right;">
+                <input type="date" id="dob" name="dob" required style="width: 70% !important;">
+                <span>DOB</span>
+            </div>
+
+            <div class="input-box">
+                <input type="password" name="password" id="password" required>
+                <span>Password</span>
+            </div>
+            <div class="input-box">
+                <input type="password" name="conform-password" id="password" required>
+                <span>Re-Enter Password</span>
+            </div>
+            <div class="address-button-container">
+                <button type="button" id="add-recipient-add-btn" class="my-btn">
+                    Add Address
+                </button>
+
+
+            </div>
+            {% include 'courier/components/delivery-address-modal.html' %}
+
+
+            <div>
+                <button class="submit-button" type="submit">
+                    <a class="neon" type="submit" style="color: dodgerblue; cursor: pointer;">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        SUBMIT
+                    </a>
+                </button>
+            </div>
+        </form>
+
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="/static/JS/username-check.js"></script>
+
+<script>
+    $('#add-recipient-add-btn').on('click', function () {
+        $('#recipient-address-modal').show();
+    });
+
+    $('.close-rec-add').on('click', function () {
+        $('#recipient-address-modal').hide();
+    });
+
+</script>
+
+<script>
+    // adding css to gender
+    var genderElement = document.getElementById('signup-gender');
+    genderElement.onchange = () => {
+        var genderLabel = document.getElementById('gender-label');
+        $('#gender-label').addClass('select-active');
+    }
+
+</script>
+
+{% endblock %}

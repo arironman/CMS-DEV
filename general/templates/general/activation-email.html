@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARCODERS EMAIL VERIFICATION</title>
+
+<style>
+    a{
+        background: #122647;
+        border: 1px solid dodgerblue;
+        color: mintcream;
+        font-family: sans-serif, 'Roboto';
+        border-radius: 10px;
+        padding: 0.5rem;
+        font-size: 1.2rem;
+        margin: 1rem;
+    }
+
+    a:hover {
+        color: dodgerblue;
+        border: 2px solid dodgerblue;
+    }
+
+    body{
+        background: black;
+        color: mintcream;
+    }
+    .content{
+        height: 100%;
+        width: 100%;
+        background: black;        
+    }
+
+    .content div{
+        color: mintcream;
+        background: black;
+        font-size: 1.2rem;
+        margin-left: 1rem;
+        margin-top: 1rem;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="content">
+
+    <div>
+        <br>
+        <br>
+
+    {% autoescape off %}
+    Hi {{ user.username }},
+    Click the Button below to activate your ARCODERS account.
+    <br>
+    <br>
+    </div>
+
+    
+    
+    <a type="button" href="{{url}}" style="background: #122647;border: 1px solid dodgerblue;color: mintcream;font-family: sans-serif, 'Roboto';"> Activate Account</a>
+    {% endautoescape %}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+</div>
+</body>
+
+</html>
+
+
