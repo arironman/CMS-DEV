@@ -1,0 +1,13 @@
+    <div class="pincode-container mx-3 pt-2">
+        <h4 class="pincode-title">Pincodes</h4>
+        <hr class="profile-border mt-2">
+        <div class="pincodes">
+            {% for pincode in user_details.delivary_pincode.all %}
+            <strong id='code-{{pincode}}'>
+                {{pincode}}
+                <i class="far fa-times-circle" id='close-{{pincode}}'></i>
+            </strong>
+            {% endfor %}
+        </div>
+
+    </div>

@@ -1,0 +1,62 @@
+<div class="address-container profile-wrapper py-3">
+    <h2 class="address-title">
+        Address
+        <hr class="header-hr">
+    </h2>
+
+    <div class="detail">
+        <p class="field">
+            House No.
+        </p>
+        <p class="value scroller" id="value-house_no">
+            {{address.house_number}}
+        </p>
+        <i class="fas fa-edit" id='update-house_no' onclick="get_modal('House_no')"></i>
+    </div>
+    <div class="detail">
+        <p class="field">
+            Street
+        </p>
+        <p class="value scroller" id="value-street">
+            {{address.street}}
+        </p>
+        <i class="fas fa-edit" id='update-street' onclick="get_modal('Street')"></i>
+    </div>
+    <div class="detail">
+        <p class="field">
+            City
+        </p>
+        <p class="value scroller" id="value-city">
+            {{address.city}}
+        </p>
+        <i class="fas fa-edit" id='update-city' onclick="get_modal('City')"></i>
+    </div>
+    <div class="detail">
+        <p class="field">
+            District
+        </p>
+        <p class="value scroller" id="value-district">
+            {{address.district}}
+        </p>
+        <i class="fas fa-edit" id='update-district' onclick="get_modal('District')"></i>
+    </div>
+    <div class="detail">
+        <p class="field">
+            State
+        </p>
+        <p class="value scroller" id="value-state">
+            {{address.state}}
+        </p>
+        <i class="fas fa-edit" id='update-state' onclick="get_modal('State')"></i>
+    </div>
+    <div class="detail">
+        <p class="field">
+            Pincode
+        </p>
+        <p class="value scroller" id="value-pincode">
+            {{address.pincode}}
+        </p>
+        <i class="fas fa-edit" id='update-pincode' onclick="get_modal('Pincode')"></i>
+    </div>
+
+</div>

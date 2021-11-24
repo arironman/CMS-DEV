@@ -1,0 +1,12 @@
+Indore	422202	Maharashtra	Nashik
+Industrial Estate	422007	Maharashtra	Nashik
+Jahule	422001	Maharashtra	Nashik
+Jaidhar	423502	Maharashtra	Nashik
+Kasari	423106	Maharashtra	Nashik
+Kashti	423206	Maharashtra	Nashik
+Katarni	423104	Maharashtra	Nashik
+Lonwadi	422209	Maharashtra	Nashik
+Madhmeshwar	422210	Maharashtra	Nashik
+Nashik	422001	Maharashtra	Nashik
+Nashik City	422001	Maharashtra	Nashik
+Nashik Road	422101	Maharashtra	Nashik

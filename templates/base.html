@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% load hosts %}
+
+<head>
+    <title>{{title}}</title>
+    <link rel="icon" type="image/png" href="/static/images/logo/logo.png">
+
+    <meta content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0' name='viewport' />
+    <!-- js and css -->
+    <script src="{% static 'JS/jquery.min.js' %}"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'CSS/bootstrap.min.css' %}">
+
+    <script>
+        var csrf_token = '{% csrf_token %}';
+        // var auth_details = JSON.parse('{{auth|safe}}');
+        console.log('{{auth}}')
+    </script>
+
+    <link rel="stylesheet" href="/static/CSS/base.css">
+    <link rel="stylesheet" href="/static/CSS/nav.css">
+    <link rel="stylesheet" href="/static/CSS/scroll.css">
+    <link rel="stylesheet" href="/static/CSS/footer.css">
+    <link rel="stylesheet" href="/static/CSS/modal.css">
+    {% block head %}
+    {% endblock %}
+
+</head>
+
+<body>
+    {% include 'nav.html' %}
+    {% include 'messages.html' %}
+    <div class="container main-container" id='#base-container' style="text-align: center;">
+        {% block content %}
+        {% endblock %}
+    {% include 'footer.html' %}
+    </div>
+
+    <script src="/static/JS/bootstrap-popper.min.js"></script>
+    <script src="{% static 'JS/bootstrap.min.js' %}"></script>
+
+
+    {% block js %}
+    {% endblock %}
+
+</body>
+
+</html>

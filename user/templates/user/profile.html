@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="/static/CSS/user/profile.css">
+<link rel="stylesheet" href="/static/CSS/user/data-scroller.css">
+{% endblock %}
+
+
+{% block content %}
+<div class="img-container mt-3">
+    <img src="/media/{{user.image}}" alt="{{user.username}}" class="user-img">
+    <h2 class="username-header">
+        {{user.username}}
+    </h2>
+    <h2 class="name-header">
+        {{user.first_name}} {{user.last_name}}
+    </h2>
+    <button class="change-profile-img">
+        Change Profile Image
+    </button>
+</div>
+<div class="user-details-container mb-2 mx-1">
+    <div class="detail-row my-5">
+        {% include 'user/profile/user-details.html' %}
+        {% include 'user/profile/address.html' %}
+    </div>
+
+    <div class="detail-row my-5">
+        {% include 'user/profile/courier.html' %}
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block js %}
+<script>
+</script>
+
+<script src="/static/JS/profile/update_modal.js"></script>
+<script src="/static/JS/username-check.js"></script>
+
+{% endblock %}

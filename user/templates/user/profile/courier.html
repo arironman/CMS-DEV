@@ -1,0 +1,57 @@
+<style>
+    .courier-name a{
+        text-decoration: none;
+        cursor: pointer;
+        color: mintcream !important;
+    }
+</style>
+
+<div class="courier-container profile-wrapper py-3">
+    <h2 class="courier-title">
+        Courier
+        <hr class="header-hr">
+    </h2>
+    <table class="courier-table">
+        <tr class="courier-heading">
+            <th class="courier-name scroller">
+                Courier Name
+            </th>
+            <th class="courier-date">
+                Pick Up Date
+            </th>
+            <th class="courier-date">
+                Delivary Date
+            </th>
+            <th class="courier-delivered">
+                <!-- Delivered -->
+            </th>
+        </tr>
+        {% for courier in status %}
+
+        <tr>
+            <td class="courier-name scroller">
+                <a href="/courier/{{courier.courier.id}}/">
+                    {{courier.courier.title|title}}
+                </a>
+            </td>
+            <td class="courier-date">
+                {{courier.courier.pickup_date}}
+            </td>
+            <td class="courier-date">
+                {{courier.delivered_date}}
+            </td>
+            <td class="courier-delivered">
+                {% if courier.is_delivered %}
+                <i class="fas fa-check-circle"></i>
+                {% else %}
+                <i class="fas fa-truck"></i>
+                {% endif %}
+                
+            </td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</div>

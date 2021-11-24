@@ -1,0 +1,166 @@
+{% load hosts %}
+
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="/">
+        <img src="/static/images/logo/logo.png" class="d-inline-block align-top logo" alt="logo">
+        Courier Delivary
+    </a>
+
+    <ul class="nav nav-tabs nav-pills px-2">
+        <li class="nav-item">
+            <a class="nav-link active" href="{% url 'home' host 'www' %}">
+                <span class="fas fa-home"></span>
+                Home
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' host 'www' %}">
+                <span class="fas fa-asterisk"></span>
+                About
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' host 'www' %}">
+                <span class="fas fa-address-card"></span>
+                Contact
+            </a>
+        </li>
+
+
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="login" data-toggle="modal" data-target="#track-modal">
+                <span class="fas fa-map-marker-alt"></span>
+                Track
+            </a>
+        </li>
+
+
+        {% if auth %}
+        
+        {% if user_details.is_employee %}
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'employee_panel' host 'employee' %}">
+                <span class="fas fa-user-cog"></span>
+                 Employee
+            </a>
+        </li>
+        {% endif %}
+
+        {% if user_details.is_delivary_boy %}
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'delivary_panel' host 'delivery' %}">
+                <span class="fas fa-truck-moving"></span>
+                Delivaries
+            </a>
+        </li>
+        {% endif %}
+
+        <div class="dropdown nav-user">
+            <button class="btn nav-item dropdown-toggle nav-user-button px-4" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="fas fa-user-tie"></span>
+                {{user.username}}
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="{% url 'user' host 'www' %}">Profile</a>
+                <a class="dropdown-item" href="{% url 'logout' host 'www' %}">Log Out</a>
+                <a class="dropdown-item" href="#">Create Parcle</a>
+            </div>
+        </div>
+        {% else %}
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'signup' host 'www' %}">
+                <span class="fas fa-user-plus"></span>
+                Sign Up
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="login" data-toggle="modal" data-target="#login-modal">
+                <span class="fas fa-sign-in-alt"></span>
+                Login
+            </a>
+        </li>
+        {% endif %}
+    </ul>
+</nav>
+
+
+<!-- login modal -->
+<div class="modal" id='login-modal' tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header border-top-0">
+                <h5 class="modal-title font-weight-bold">Login</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="POST" action="{% url 'login' host 'www' %}?next={{request.path}}" id='login-modal-form'>
+            <div class="modal-body">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <!-- <label for="login-email">Email address</label> -->
+                        <input type="text" class="form-control" id="login-email" aria-describedby="emailHelp"
+                            placeholder="Enter Username or Email" name='username'>
+                        <small id="emailHelp" class="form-text text-muted px-3">We'll never share your email with anyone
+                            else.</small>
+                    </div>
+                    <div class="form-group">
+                        <!-- <label for="login-password">Password</label> -->
+                        <input type="password" class="form-control" id="login-password" placeholder="Password" name="password">
+                    </div>
+                </div>
+                <div class="modal-footer border-bottom-0">
+                    <button type="submit" class="btn btn-primary"> Submit</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('#login').on('click', function () {
+        console.log('clicked');
+        $('#login-modal').trigger('focus')
+    });
+</script>
+
+
+
+<!-- Track Modal -->
+<div class="modal" id='track-modal' tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header border-top-0">
+                <h5 class="modal-title font-weight-bold">Track Parcle</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <!-- <label for="parcle-id">Parcle ID</label> -->
+                        <input type="text" class="form-control" id="parcle-id" aria-describedby="emailHelp"
+                            placeholder="Enter Parcle ID" name='parcle_id'
+                            onkeypress='return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 48 && event.charCode <= 57))'>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer border-bottom-0">
+                <button type="button" class="btn btn-primary my-btn">Track</button>
+                <button type="button" class="btn btn-secondary my-btn" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('#login').on('click', function () {
+        console.log('clicked');
+        $('#login-modal').trigger('focus')
+    });
+
+</script>

@@ -1,0 +1,12 @@
+    <div class="profile-container mb-4 py-2">
+        <img src="/media/{{user_details.image}}" alt="{{user.username}}" class="mt-3">
+        <div class="profile mt-4">
+            <h2 class="username">{{user.username}}</h2>
+            <h2 class="name">{{user.first_name}} {{user.last_name}}</h2>
+            <form action="" method="get" class="add-pincode-form mt-3">
+                <input type="text" class="add-pincode" placeholder="Add Pincode"
+                    onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="6">
+                <input type="submit" class="add-pincode-btn" value="Add">
+            </form>
+        </div>
+    </div>

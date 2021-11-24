@@ -1,0 +1,44 @@
+<div class="parcle-container m-3">
+    <h4 class="parcle-title">COURIERS</h4>
+    <hr class="profile-border mt-2">
+
+
+    {% for courier in user_details.couriers.all %}
+    <div class="parcle py-3 mt-3">
+        <h5 class="parcle-name">
+            {{courier.name}}
+        </h5>
+        <p class="from">
+            {{courier.customer.first_name}} {{courier.customer.last_name}}
+        </p>
+        <hr class="profile-border mt-0">
+        <div class="parcle-details">
+            <p class="delivary-address mx-3">
+
+                {{courier.deliver_address.house_number}}
+                <br>
+                {{courier.deliver_address.street}}
+                <br>
+                {{courier.deliver_address.city}}, {{courier.deliver_address.state}}
+                <br>
+                {{courier.deliver_address.pin_code}}
+            </p>
+
+            <div class="other-info">
+                <p class="status">
+                    <i class="fas fa-shipping-fast"></i>
+                    Delivared
+                </p>
+                <p class="date">
+                    <i class="fas fa-people-carry"></i>
+                    {{user_details.dob}}
+                </p>
+                <p class="details">
+                    <i class="fas fa-info-circle"></i>
+                    Show More
+                </p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>

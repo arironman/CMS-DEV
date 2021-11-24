@@ -1,0 +1,53 @@
+<div class="user-details profile-wrapper py-3">
+    <h2>
+        Profile Info
+        <hr class="header-hr">
+    </h2>
+    <div class="detail">
+        <p class="field">
+            Name
+        </p>
+        <p class="value scroller" id='value-name'>
+            {{user.first_name}} {{user.last_name}}
+        </p>
+        <i class="fas fa-edit" id='update-name' onclick="get_modal('Name')"></i>
+    </div>
+    <div class="detail">
+        <p class="field">
+            Username
+        </p>
+        <p class="value scroller" id='value-username'>
+            {{user.username}}
+        </p>
+        <i class="fas fa-edit" id='update-username' onclick="get_modal('Username')"></i>
+    </div>
+    
+    <div class="detail">
+        <p class="field">
+            Gender
+        </p>
+        <p class="value scroller" id='value-gender'>
+            {{user.gender}}
+        </p>
+        <i class="fas fa-edit" id='update-gender' onclick="get_modal('gender')"></i>
+    </div>
+
+    <div class="detail">
+        <p class="field">
+            Email
+        </p>
+        <p class="value scroller" id='value-email'>
+            {{user.email}}
+        </p>
+        <i class="fas fa-edit" id='update-email' onclick="get_modal('Email')"></i>
+    </div>
+    <div class="detail">
+        <p class="field">
+            Mobile
+        </p>
+        <p class="value scroller" id="value-mobile">
+            {{user.mobile}}
+        </p>
+        <i class="fas fa-edit" id='update-mobile' onclick="get_modal('Mobile')"></i>
+    </div>
+</div>

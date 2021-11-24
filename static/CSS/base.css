@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300&display=swap');
+* {
+    font-family: 'JetBrains Mono';
+}
+
+.main-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: black;
+    /* background: #252324; */
+}
+
+body {
+    background-color: black;
+}
+
+.my-btn {
+    background-color: black;
+    color: mintcream;
+    border: 2px solid dodgerblue;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.my-btn:hover, .my-btn:focus{
+    color: dodgerblue;
+    border-color: mintcream;
+    background-color: #122647;
+}

@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="/static/CSS/user/employee-panel.css">
+{% endblock %}
+
+
+{% block content %}
+
+<h2 class="panel-title mt-5">
+    <span class="fas fa-cogs"></span>
+    Control Panel
+</h2>
+
+<div class="employee-container my-4">
+    <div class="user-panel">
+        <h3 class="panel-heading">
+            <span class="fas fa-user-tie"></span>
+            User Panel
+        </h3>
+        <button class="btn btn-lg">
+            <span class="fas fa-user-plus"></span>
+            Add User
+        </button>
+        <button class="btn btn-lg">
+            <span class="fas fa-user-edit"></span>
+            Update User
+        </button>
+        <button class="btn btn-lg">
+            <span class="fas fa-user-times"></span>
+            Remove User
+        </button>
+    </div>
+
+    <div class="employee-panel">
+        <h3 class="panel-heading">
+            <span class="fas fa-users-cog"></span>
+            Employee Panel
+        </h3>
+        <button class="btn btn-lg">
+            <span class="fas fa-user-plus"></span>
+            Add Employee
+        </button>
+        <button class="btn btn-lg">
+            <span class="fas fa-user-edit"></span>
+            Update Employee
+        </button>
+        <button class="btn btn-lg">
+            <span class="fas fa-user-times"></span>
+            Remove Employee
+        </button>
+    </div>
+
+    <div class="parcle-panel">
+        <h3 class="panel-heading">
+            <span class="fas fa-box-open"></span>
+            Parcle Panel
+        </h3>
+        <button class="btn btn-lg">
+            <span class="fas fa-plus-square"></span>
+            Add Parcle
+        </button>
+        <button class="btn btn-lg">
+            <span class="fas fa-pen-square"></span>
+            Update Parcle
+        </button>
+        <button class="btn btn-lg">
+            <span class="fas fa-window-close"></span>
+            Cancel Parcle
+        </button>
+    </div>
+</div>
+{% endblock %}

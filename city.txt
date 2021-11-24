@@ -1,0 +1,9 @@
+    City/Town       District                State           Pincodes
+->  Ahmedabad       Ahmedabad               Gujarat         
+->  Naroda I E S.O  Ahmedabad               Gujarat
+->  Nikol B.O       Ahmedabad               Gujarat
+->  Althan S.O      Surat                   Gujarat
+->  Bhagal S.O      Surat                   Gujarat
+->  Godadara B.O    Surat                   Gujarat
+->  Ankleshwar IE   Vadodara                Gujarat
+->
