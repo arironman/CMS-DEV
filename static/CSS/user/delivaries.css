@@ -1,0 +1,137 @@
+.main-container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+
+.delivary-container {
+    margin: auto;
+    border: 2px solid dodgerblue;
+    max-width: 720px;
+    border-radius: 10px;
+}
+
+.profile-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 700px;
+    min-width: 300px;
+    margin: auto;
+    justify-content: center;
+    /* border: 2px solid dodgerblue; */
+    border-radius: 10px;
+}
+
+.profile-container img {
+    border: 2px solid dodgerblue;
+    border-radius: 50%;
+    height: max-content;
+    margin: auto;
+}
+
+.profile {
+    color: mintcream;
+    text-align: left;
+    margin: auto;
+    min-width: 60%;
+}
+
+.profile-border {
+    width: 90%;
+    border: 1px solid;
+    background-color: mintcream;
+    color: mintcream;
+}
+
+.add-pincode {
+    background-color: black;
+    color: mintcream;
+    border: 0;
+    border-bottom: 2px solid dodgerblue;
+    outline: none;
+    width: 150px;
+}
+
+.add-pincode::placeholder {
+    color: mintcream;
+    opacity: 1;
+}
+
+.add-pincode-btn {
+    background: black;
+    color: mintcream;
+    outline: none;
+    border: 2px solid dodgerblue;
+    border-radius: 10px;
+}
+
+/* pincode container */
+
+.pincode-container {
+    color: mintcream;
+    margin: auto;
+    border: 2px solid dodgerblue;
+    border-radius: 10px;
+}
+
+.pincodes {
+    /* border: 2px solid mintcream; */
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.2rem;
+    justify-content: space-evenly;
+}
+
+.pincodes strong {
+    border: 2px solid dodgerblue;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.pincodes i {
+    cursor: pointer;
+}
+
+.pincodes strong:hover {
+    background-color: #122647;
+    color: dodgerblue;
+}
+
+.pincodes i:hover {
+    color: tomato;
+}
+
+/* parcle container */
+
+.parcle-container {
+    border: 2px solid dodgerblue;
+    color: mintcream;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.parcle {
+    border: 2px solid mintcream;
+    border-radius: 10px;
+    background: linear-gradient(0deg, black 0%, #122647 150%);
+}
+
+.parcle-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.delivary-address {
+    text-align: left;
+}
+
+.other-info {
+    text-align: left;
+    min-width: 200px;
+}
+
+.other-info p {
+    margin: 0;
+}

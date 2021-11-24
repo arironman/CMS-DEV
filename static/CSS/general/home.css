@@ -1,0 +1,173 @@
+/* Tracking form styling */
+
+.main-container {
+    /* background: rgb(85, 42, 42); */
+    /* background: linear-gradient(0deg, #122647 0%, black 70%); */
+    background: linear-gradient(0deg, black 0%, #122647 130%);
+}
+
+.track-container {
+    color: dodgerblue;
+    width: 100%;
+    background-image: url('/static/images/parcle-new.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-y: 30%;
+    background-position-x: center;
+    margin: auto;
+    display: flex;
+    height: 90vh;
+}
+
+.tracking-form-container {
+    margin: auto;
+    min-width: 300px;
+    width: 410px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tracking-form {
+    position: relative;
+    width: 100%;
+}
+
+.tracking-form input {
+    background-color: #122647;
+    font-size: 1.5rem;
+    color: mintcream !important;
+    min-width: 280px;
+    max-width: 400px;
+    width: 90%;
+    border: none;
+    background: none;
+    border-bottom: 0.2rem solid mintcream;
+    text-decoration: none !important;
+    outline: none;
+}
+
+.tracking-form span {
+    margin-left: 1rem;
+}
+
+.tracking-form .tracking-input-container {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.tracking-form .tracking-input-container input:focus~span, .tracking-form .tracking-input-container input:valid~span {
+    transform: translateY(-24px);
+    color: dodgerblue;
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+.tracking-form .tracking-input-container input:focus, .tracking-form .tracking-input-container input:valid {
+    border-block-color: #fff;
+    border-color: dodgerblue;
+}
+
+.tracking-form .tracking-input-container span {
+    position: absolute;
+    left: 0;
+    /* font-size: 16px; */
+    font-size: 1.5rem;
+    font-weight: 300;
+    display: inline-block;
+    pointer-events: none;
+    letter-spacing: 1px;
+    /* color: rgba(255, 255, 255, 0.5); */
+    color: mintcream;
+    transition: all 0.2s;
+}
+
+/* for old one not used now */
+.tracking-form input[type='submit'] {
+    background: #fff;
+    padding: 8px 20px;
+    margin-top: -10px;
+    width: 125px;
+    cursor: pointer;
+    background: #ff5064;
+    color: mintcream;
+    font-size: 18px;
+    font-weight: 400;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: bold;
+}
+
+.tracking-courier-home-btn {
+    background: #fff;
+    padding: 12px 30px;
+    margin-top: -10px;
+    /* width: 125px; */
+    cursor: pointer;
+    background: #ff5064;
+    color: mintcream;
+    font-size: 18px;
+    font-weight: 400;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: bold;
+}
+
+.tracking-form input[type='submit']:focus, .tracking-form input[type='submit']:hover {
+    background: #1bfaad;
+    color: dodgerblue !important;
+}
+
+/* Cards */
+
+.home-card {
+    max-width: 300px;
+    display: inline-block;
+    margin: 5em 2em;
+    /* background: mintcream; */
+    background: #122647;
+    /* background: darkblue; */
+    color: mintcream;
+    border: 2.5px solid mintcream;
+    min-width: 250px;
+    /* width: 300px; */
+    border-radius: 10px;
+}
+
+.home-card-hr {
+    color: mintcream;
+    border: 1px solid mintcream;
+    width: 80%;
+    margin: auto !important;
+    margin-bottom: 1rem !important;
+}
+
+.home-card-body {
+    padding-bottom: 5px;
+    padding-top: 12px;
+}
+
+.home-card-img {
+    border-radius: 50%;
+    border: 2px solid dodgerblue;
+    margin-bottom: 1rem;
+    background-color: black;
+}
+
+.home-card .btn {
+    color: mintcream;
+    font-family: 'JetBrains Mono';
+}
+
+.card-button-view {}
+
+.home-card .card-body {
+    text-align: left;
+}
+
+.card-text {
+    font-size: 1rem;
+    text-align: left;
+}

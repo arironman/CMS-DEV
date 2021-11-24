@@ -1,0 +1,19 @@
+.alert {
+    background-color: black;
+    border: 1.5px solid dodgerblue;
+    border-bottom: 2px solid dodgerblue;
+    color: mintcream;
+    text-align: center;
+}
+
+.alert strong {
+    color: dodgerblue;
+}
+
+.alert .close {
+    padding: 0;
+    height: 100%;
+    width: 2rem;
+    text-align: center;
+    padding-bottom: 0.2rem;
+}

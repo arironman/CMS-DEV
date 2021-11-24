@@ -1,0 +1,46 @@
+/* updating the position to center vertically */
+
+.modal {
+    top: 20vh;
+}
+
+.modal .form-control {
+    color: dodgerblue;
+    background: #122647;
+    font-weight: bold;
+    border: 2px solid dodgerblue;
+    background: black;
+}
+
+.modal-content {
+    background-color: black !important;
+    border: 2px solid dodgerblue;
+    border-radius: 10px;
+    color: mintcream !important;
+    font-family: 'JetBrains Mono' !important;
+}
+
+.modal-header {
+    background-color: black !important;
+    border-bottom: 2px solid dodgerblue;
+    border-radius: 10px 10px 0 0;
+}
+
+.modal-footer {
+    background-color: black !important;
+    border-top: 2px solid dodgerblue;
+    border-radius: 0 0 10px 10px;
+}
+
+/* close btn */
+
+.close {
+    color: mintcream;
+    opacity: 1 !important;
+    text-shadow: none !important;
+    font-size: 2rem;
+}
+
+.close:hover {
+    color: dodgerblue;
+}

@@ -1,0 +1,21 @@
+.page-footer {
+    background-color: #122647;
+    color: mintcream;
+    max-width: 900px;
+    margin: auto;
+    border-radius: 10px 10px 0 0;
+    padding-top: 1rem !important;
+}
+
+.social-media-icon i {
+    color: mintcream;
+    font-size: 1.2rem;
+}
+
+.footer-social-media {
+    margin: 0 !important;
+}
+
+.footer-copyright{
+    padding-top: 0.8rem !important;
+}

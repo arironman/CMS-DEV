@@ -1,0 +1,31 @@
+.scroller {}
+
+.scroller::-webkit-scrollbar {
+    width: 40%;
+    height: 0.3rem;
+}
+
+.scroller::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: #122647;
+}
+
+.scroller::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: dodgerblue;
+}
+
+.scroller-y::-webkit-scrollbar {
+    width: 2px;
+    height: 160px;
+}
+
+.scroller-y::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: #122647;
+}
+
+.scroller-y::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: dodgerblue;
+}

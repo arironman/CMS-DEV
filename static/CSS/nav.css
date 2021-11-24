@@ -1,0 +1,72 @@
+.navbar {
+    background: #122647 !important;
+}
+
+.navbar-brand {
+    color: dodgerblue !important;
+    padding: .2rem 1rem !important;
+    font-weight: bold;
+}
+
+.nav {
+    border: none !important;
+    justify-content: space-between;
+}
+
+.nav-link {
+    font-weight: bold;
+    outline: none !important;
+    /* max-width: 37vw; */
+}
+
+.nav-link:hover {
+    background-color: mintcream;
+    color: dodgerblue;
+    border: 2px solid dodgerblue !important;
+}
+
+.nav-link:focus {
+    border: none;
+}
+
+.active {
+    border: none !important;
+}
+
+.modal-header, .modal-footer {
+    background-color: mintcream;
+    border-radius: 2px;
+    border-top: 2px solid darkgray;
+    border-bottom: 2px solid darkgray;
+}
+
+.logo {
+    height: 2rem;
+    width: 2rem;
+}
+
+.nav-user {
+    margin: auto;
+}
+
+.nav-user-button {
+    background-color: #122647;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.nav-user-button:focus, .nav-user-button:hover {
+    outline: none !important;
+    box-shadow: none;
+    background-color: mintcream;
+    border: 2px solid dodgerblue;
+    color: dodgerblue;
+}
+
+.valid {
+    border-color: mintcream !important;
+}
+
+.invalid {
+    border-color: tomato !important;
+}

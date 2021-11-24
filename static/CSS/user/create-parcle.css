@@ -1,0 +1,7 @@
+.input-box input::-webkit-outer-spin-button, input::-webkit-inner-spin-button, .test {
+    display: none;
+    margin: 0;
+    /* background-color: dodgerblue !important;
+    border: 2px solid dodgerblue !important;
+    color: dodgerblue !important; */
+}

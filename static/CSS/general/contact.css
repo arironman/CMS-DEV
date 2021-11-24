@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Recursive:wght@300&display=swap');
+.main-container {
+    /* background-image: url('/static/images/contact.jpg'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+}
+
+.form-container {
+    font-family: 'Recursive' !important;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    /* background-color: #122647; */
+    max-width: 700px;
+    padding: 2rem;
+    background-color: #122647;
+    border-radius: 10px;
+}
+
+.contact-form {
+    position: relative;
+    width: 100%;
+    /* padding: 0 0 0 75px; */
+    padding: 0;
+}
+
+.contact-form h2 {
+    color: mintcream;
+    font-weight: 500;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+}
+
+.contact-form .input-box {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.contact-form .input-box:last-child {
+    margin-bottom: 0px;
+}
+
+.contact-form .input-box input, .contact-form .input-box textarea {
+    position: relative;
+    background: transparent;
+    outline: none;
+    border: none;
+    width: 100%;
+    color: #fff;
+    padding-bottom: 10px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.contact-form .input-box textarea {
+    height: 100px;
+}
+
+.contact-form .input-box span {
+    position: absolute;
+    left: 0;
+    font-size: 16px;
+    font-weight: 300;
+    display: inline-block;
+    pointer-events: none;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.5);
+    transition: all 0.2s;
+}
+
+.contact-form .input-box input:focus~span, .contact-form .input-box textarea:focus~span, .contact-form .input-box input:valid~span, .contact-form .input-box textarea:valid~span {
+    transform: translateY(-24px);
+    color: dodgerblue;
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+.contact-form .input-box input:focus, .contact-form .input-box textarea:focus, .contact-form .input-box input:valid, .contact-form .input-box textarea:valid {
+    border-block-color: #fff;
+    border-color: #fff;
+}
+
+.valid {
+    border-color: mintcream !important;
+}
+
+.invalid {
+    border-color: tomato !important;
+}
